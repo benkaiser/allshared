@@ -292,3 +292,14 @@ footer {
 .navbar.scrolled {
   box-shadow: 0 2px 4px rgba(0,0,0,.1) !important;
 }
+
+// Smooth scrolling for internal links
+html {
+  scroll-behavior: smooth;
+}
+
+// CTA button hover effects
+.cta .btn:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
