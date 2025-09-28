@@ -1,2 +1,129 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+// AllShared Custom Styles
+// Landing page specific styles
+.hero {
+  background: linear-gradient(135deg, #0d6efd 0%, #6f42c1 100%);
+}
+
+.step-card, .value-card, .feature-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,.125);
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+}
+
+.step-card:hover, .value-card:hover, .feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+  border-color: rgba(0,0,0,.2);
+}
+
+// Universal card styling
+.step-card, .value-card, .feature-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+// Colorful top border effect for all cards
+.step-card::before, .value-card::before, .feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #198754, #0dcaf0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover::before, .value-card:hover::before, .feature-card:hover::before {
+  opacity: 1;
+}
+
+// Icon styling for all card types
+.step-icon, .value-card i, .feature-card i {
+  margin-bottom: 1.5rem;
+}
+
+.step-icon .rounded-circle {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+  transition: all 0.3s ease;
+}
+
+.step-card:hover .step-icon .rounded-circle {
+  transform: scale(1.1);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+// Icon hover effects for value and feature cards
+.value-card:hover i, .feature-card:hover i {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+// Ensure value cards align content properly
+.value-card .d-flex {
+  align-items: flex-start;
+}
+
+.hero-illustration {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+// Utility classes
+.text-white-75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+// Custom button states for disabled CTAs
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+// Custom spacing for sections
+section {
+  position: relative;
+}
+
+// Responsive improvements
+@media (max-width: 768px) {
+  .hero .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .hero-illustration i {
+    font-size: 4rem !important;
+  }
+
+  .hero-illustration .mt-3 i {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-illustration .d-flex i {
+    font-size: 2rem !important;
+  }
+}
