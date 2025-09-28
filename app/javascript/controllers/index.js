@@ -4,5 +4,17 @@
 
 import { application } from "./application"
 
+import CopyButtonController from "./copy_button_controller"
+application.register("copy-button", CopyButtonController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ShareButtonController from "./share_button_controller"
+application.register("share-button", ShareButtonController)
+
+import SignupMapController from "./signup_map_controller"
+application.register("signup-map", SignupMapController)
+
+import SuburbAutocompleteController from "./suburb_autocomplete_controller"
+application.register("suburb-autocomplete", SuburbAutocompleteController)
